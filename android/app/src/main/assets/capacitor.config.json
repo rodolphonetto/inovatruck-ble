@@ -1,0 +1,6 @@
+{
+	"appId": "inova.truck",
+	"appName": "Inova Truck",
+	"webDir": "dist",
+	"bundledWebRuntime": false
+}

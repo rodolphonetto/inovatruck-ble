@@ -1,0 +1,31 @@
+diff --git a/node_modules/chessboardjs-vue/chessboard-1.0.0.css b/node_modules/chessboardjs-vue/chessboard-1.0.0.css
+index e29b806..47d5a1b 100644
+--- a/node_modules/chessboardjs-vue/chessboard-1.0.0.css
++++ b/node_modules/chessboardjs-vue/chessboard-1.0.0.css
+@@ -23,20 +23,20 @@
+ }
+ 
+ .white-1e1d7 {
+-  background-color: #f0d9b5;
+-  color: #b58863;
++  background-color: #e0e0e0;
++  color: #6d6d6d;
+ }
+ 
+ .black-3c85d {
+-  background-color: #b58863;
+-  color: #f0d9b5;
++  background-color: #6d6d6d;
++  color: #e0e0e0;
+ }
+ 
+ .highlight1-32417, .highlight2-9c5d2 {
+-  box-shadow: inset 0 0 3px 3px yellow;
++  box-shadow: inset 0 0 3px 3px #fa7f1b;
+ }
+ .highlightgray{
+-  box-shadow: inset 0 0 3px 3px blueviolet;
++  background-color: #fa7f1b;
+ }
+ 
+ .notation-322f9 {

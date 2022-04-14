@@ -1,0 +1,7 @@
+{
+  "name": "Inova Truck",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "vue"
+}
