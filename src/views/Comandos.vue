@@ -1,20 +1,34 @@
 <template>
   <ion-page>
     <ion-content :fullscreen="true">
-      <Header />
       <div class="container">
         <div class="pecas-container">
-          <div v-for="(comando, index) in selectedPeca.comandos" :key="index">
-            <OnOff
-              v-if="comando.type === 'onoff'"
-              :comando="comando"
-              @clicked="sendCommand"
+          <div class="infos-container">
+            <img
+              :src="`https://api.inovatruck.com.br${selectedPeca.image}`"
+              alt=""
             />
-            <Increment
-              v-if="comando.type === 'incremento'"
-              :comando="comando"
-              @clicked="sendCommand"
-            />
+            <span>
+              {{ selectedPeca.name }}
+            </span>
+          </div>
+          <div class="on-off-container">
+            <div v-for="(comando, index) in selectedPeca.comandos" :key="index">
+              <OnOff
+                v-if="comando.type === 'onoff'"
+                :comando="comando"
+                @clicked="sendCommand"
+              />
+            </div>
+          </div>
+          <div class="adjustments-container">
+            <div v-for="(comando, index) in selectedPeca.comandos" :key="index">
+              <Increment
+                v-if="comando.type === 'incremento'"
+                :comando="comando"
+                @clicked="sendCommand"
+              />
+            </div>
           </div>
         </div>
       </div>
@@ -29,14 +43,12 @@ import { BleClient } from '@capacitor-community/bluetooth-le'
 
 import OnOff from '@/components/OnOff'
 import Increment from '@/components/Increment'
-import Header from '@/components/Header'
 
 export default {
   name: 'Comandos',
   components: {
     IonContent,
     IonPage,
-    Header,
     OnOff,
     Increment,
   },
@@ -116,19 +128,66 @@ export default {
 
 <style scoped>
 .container {
-  background-color: #ebebeb !important;
+  background-color: #1b4f81 !important;
   height: 100%;
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  justify-content: center;
 }
 
 .pecas-container {
-  width: 80%;
+  width: 50%;
+  margin-top: 30px;
+  margin-left: 50px;
+}
+
+.on-off-container {
+  background-color: #4b4b4d;
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
+  text-align: center;
+  border: 2px solid #f5f043;
+  padding: 10px;
+  margin-bottom: 40px;
   margin-top: 10px;
+  border-radius: 25px;
+  justify-content: space-between;
+}
+
+.adjustments-container {
+  background-color: #4b4b4d;
+  display: flex;
+  flex-wrap: wrap;
+  text-align: center;
+  border: 2px solid #f5f043;
+  padding: 10px;
+  margin-top: 10px;
+  border-radius: 25px;
+}
+
+img {
+  margin-top: 30px;
+  max-width: 450px;
+  max-height: 450px;
+  border-radius: 5px;
+  box-shadow: 0px 3px 10px #00000046;
+}
+
+span {
+  color: black;
+  font-weight: bold;
+}
+
+.infos-container {
+  display: flex;
+  align-items: center;
+}
+
+.infos-container span {
+  background-color: #363435;
+  padding: 50px;
+  color: white;
+  margin: 0 auto;
+  border: 2px solid #f5f043;
+  border-radius: 25px;
 }
 </style>

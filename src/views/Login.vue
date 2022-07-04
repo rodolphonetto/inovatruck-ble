@@ -1,8 +1,8 @@
 <template>
   <ion-page>
     <ion-content :fullscreen="true">
+      <Header />
       <div class="container">
-        <Header />
         <form class="login-form">
           <div class="input-container">
             <label for="login">E-mail:</label>
@@ -12,7 +12,7 @@
             <label for="password">Senha:</label>
             <input type="password" v-model="password" />
           </div>
-          <div @click="login">Login</div>
+          <div class="button" @click="login">Login</div>
         </form>
       </div>
     </ion-content>
@@ -92,6 +92,7 @@ export default {
   height: 100%;
   display: flex;
   flex-direction: column;
+  justify-content: center;
 }
 
 span {
@@ -115,6 +116,18 @@ span {
   align-items: center;
   margin-bottom: 20px;
 }
+
+.button {
+  background-color: #5faffa;
+  color: #fff;
+  padding: 10px;
+  border-radius: 5px;
+  border: none;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
 label {
   color: black;
   margin-right: 20px;
@@ -124,6 +137,7 @@ input {
   background: none;
   color: black;
   padding: 5px 5px;
+  border-radius: 5px;
 }
 
 input:focus,

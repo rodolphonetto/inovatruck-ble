@@ -38,4 +38,8 @@ span {
   margin-top: 10px;
   font-weight: bold;
 }
+
+img {
+  box-shadow: 0px 3px 10px #00000046;
+}
 </style>

@@ -1,25 +1,24 @@
 <template>
   <div class="container">
     <div class="comandos-container">
-      <span v-if="!status" class="isOn" @click="clicked(comando.message_on)">
-        {{ comando.name }}
-        Ligar
-      </span>
-      <span v-else class="isOff" @click="clicked(comando.message_off)">
-        {{ comando.name }}
-        Desligar
-      </span>
+      <span>Teste</span>
+      <Toggle v-model="status" on-label="On" off-label="Off"> </Toggle>
     </div>
   </div>
 </template>
 
 <script>
+import Toggle from '@vueform/toggle'
 export default {
   name: 'OnOff',
 
+  components: {
+    Toggle,
+  },
+
   data() {
     return {
-      status: false,
+      status: true,
     }
   },
 
@@ -38,6 +37,7 @@ export default {
   },
 }
 </script>
+<style src="@vueform/toggle/themes/default.css"></style>
 
 <style scoped>
 .container {
@@ -50,16 +50,18 @@ span {
   margin-top: 10px;
   font-weight: bold;
   padding: 20px 15px;
+  border-radius: 5px;
 }
 
 .isOn {
-  background-color: green;
+  background-color: rgb(67, 160, 67);
 }
 .isOff {
-  background-color: red;
+  background-color: rgb(216, 62, 62);
 }
 
 .comandos-container {
+  background-color: #4b4b4d;
   width: 500px;
   display: flex;
   justify-content: space-around;

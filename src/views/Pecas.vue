@@ -3,6 +3,7 @@
     <ion-content :fullscreen="true">
       <Header />
       <div class="container">
+        <h2>Peças disponíveis</h2>
         <div class="pecas-container">
           <div v-for="(peca, index) in pecas" :key="index">
             <Peca :peca="peca" @selected="selected" />
@@ -57,11 +58,13 @@ export default {
 }
 
 .pecas-container {
-  width: 80%;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-  margin-top: 10px;
+  width: 50%;
+  display: grid;
+  grid-row-gap: 50px;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+h2 {
+  color: black;
 }
 </style>

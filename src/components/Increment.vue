@@ -1,5 +1,5 @@
 <template>
-  <div class="teste">
+  <div class="increment-container">
     <span>{{ comando.name }}</span>
     <vue-slider v-model="number" min="1" max="100"></vue-slider>
   </div>
@@ -37,7 +37,13 @@ export default {
 </script>
 
 <style scoped>
-.teste {
+.increment-container {
   width: 200px;
+  margin-left: 10px;
+}
+
+span {
+  color: black;
+  font-weight: bold;
 }
 </style>
